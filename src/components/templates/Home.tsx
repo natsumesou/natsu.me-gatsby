@@ -1,11 +1,19 @@
 import { Box } from '@material-ui/core'
-import * as React from 'react'
+import React from 'react'
+import { About } from '../organisms/About'
+import { Appetizer } from '../organisms/Appetizer'
+import { Contact } from '../organisms/Contact'
+import { Links } from '../organisms/Links'
+import { Works } from '../organisms/Works'
 
-// markup
 const Home = () => {
   return (
     <Box>
-      <h1>test</h1>
+      <Works />
+      <Contact />
+      <Appetizer />
+      <About />
+      <Links />
     </Box>
   )
 }

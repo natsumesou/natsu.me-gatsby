@@ -21,13 +21,17 @@ const useStyles = makeStyles((theme: Theme) =>
 )
 
 export const ContactFloatButton = () => {
-  const [t] = useTranslation();
   const classes = useStyles();
+  const { t, ready } = useTranslation();
+  let contact = 'contact'
+  if (ready) {
+    contact = t('contact')
+  }
 
   return (
     <Fab variant="extended" size="medium" target="_blank" rel="noreferrer" className={classes.fab} href="https://docs.google.com/forms/d/e/1FAIpQLSfIp2atxPoEEl64C2EDqpKbG0IiJZChfu7Sj1OusTopPqKE7Q/viewform?usp=sf_link">
       <MailOutlineIcon className={classes.icon} />
-      {t('contact', {defaultValue: 'contact'})}
+      {contact}
     </Fab>
   )
 }

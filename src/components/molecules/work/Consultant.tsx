@@ -3,12 +3,17 @@ import React from 'react'
 import { useTranslation } from 'react-i18next';
 
 export const Consultant = () => {
-  const [t] = useTranslation();
+  const { t, ready } = useTranslation();
+  let consultant = 'Consultant', description = ''
+  if (ready) {
+    consultant = t('consultant')
+    description = t('consultant.description')
+  }
 
   return (
     <Grid item sm={6}>
-    <h3>{t('consultant', {defaultValue: 'consultant'})}</h3>
-    <p>{t('consultant.description', {defaultValue: ''})}</p>
+    <h3>{consultant}</h3>
+    <p>{description}</p>
     </Grid>
   )
 }

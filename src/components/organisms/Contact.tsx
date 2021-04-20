@@ -4,12 +4,16 @@ import { ContactButton } from '../atoms/ContactButton';
 import { MainBox } from '../molecules/MainBox'
 
 export const Contact = () => {
-  const [t] = useTranslation();
+  const { t, ready } = useTranslation();
+  let description = ''
+  if(ready) {
+    description = t('contact.description')
+  }
 
   return (
     <MainBox>
       <h2>Contact</h2>
-      <p>{t('contact.description', {defaultValue: ''})}</p>
+      <p>{description}</p>
       <ContactButton />
     </MainBox>
   )

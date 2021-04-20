@@ -6,23 +6,25 @@ import { MainBox } from '../molecules/MainBox'
 
 export const About = () => {
   const { t, ready } = useTranslation();
-  let about
-  if (ready === false) {
-    about = ''
-  } else {
-    about = `${t('about.start')}
-    <LinkedinLink />
-    ${t('about.or')}
-    <WantedlyLink />
-    ${t('about.end')}
-    `
+  let name = 'Yoshiaki Natsume', aboutStart = '', aboutOr = '', aboutEnd = ''
+  if (ready) {
+    name = `${t('fullname')} ` + name
+    aboutStart = t('about.start')
+    aboutOr = t('about.or')
+    aboutEnd = t('about.end')
   }
 
   return (
     <MainBox>
     <h2>About</h2>
-    <h3>{t('fullname', {defaultValue: ''})} Yoshiaki Natsume</h3>
-    <p>{about}</p>
+    <h3>{name}</h3>
+    <p>
+      {aboutStart}
+      <LinkedinLink />
+      {aboutOr}
+      <WantedlyLink />
+      {aboutEnd}
+    </p>
     </MainBox>
   )
 }

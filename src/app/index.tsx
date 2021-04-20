@@ -1,11 +1,12 @@
 import React from 'react'
-import { CssBaseline, MuiThemeProvider, ThemeProvider } from '@material-ui/core'
+import { CssBaseline, MuiThemeProvider } from '@material-ui/core'
 import { theme } from '@/theme'
 import { Header } from '@/components/organisms/Header'
 import jaJson from '@/locales/ja.json';
 import { initReactI18next } from 'react-i18next';
 import i18n from 'i18next';
 import { Footer } from '@/components/organisms/Footer';
+import SEO from '@/components/SEO';
 
 i18n.use(initReactI18next).init({
   resources: {
@@ -19,6 +20,7 @@ i18n.use(initReactI18next).init({
 const App = ({ children }) => {
   return (
     <MuiThemeProvider theme={theme}>
+      <SEO />
       <CssBaseline />
       <Header />
       <main>{children}</main>

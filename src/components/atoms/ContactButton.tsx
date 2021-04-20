@@ -20,7 +20,7 @@ export const ContactButton = () => {
   const classes = useStyles();
 
   return (
-    <Fab variant="extended" size="medium" target="_blank" rel="noreferrer" className={classes.fab} href="https://docs.google.com/forms/d/e/1FAIpQLSfIp2atxPoEEl64C2EDqpKbG0IiJZChfu7Sj1OusTopPqKE7Q/viewform?usp=sf_link">
+    <Fab variant="extended" size="large" target="_blank" rel="noreferrer" className={classes.fab} href="https://docs.google.com/forms/d/e/1FAIpQLSfIp2atxPoEEl64C2EDqpKbG0IiJZChfu7Sj1OusTopPqKE7Q/viewform?usp=sf_link">
       {t('contact')}
     </Fab>
   )

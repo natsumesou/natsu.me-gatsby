@@ -15,6 +15,7 @@ i18n.use(initReactI18next).init({
   fallbackLng: 'ja',
   returnEmptyString: false,
   react: {
+    wait: true,
     useSuspense: true
   }
 })

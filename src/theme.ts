@@ -80,10 +80,24 @@ export const theme = createMuiTheme({
         },
         html: {
           minHeight: '100%',
-          fontSize: '10px',
+          fontSize: '12px',
         },
       },
     },
+    MuiButton: {
+      sizeLarge: {
+        "& $label": {
+          fontSize: '1.6rem',
+        }
+      }
+    },
+    MuiFab: {
+      sizeMedium: {
+        "& $label": {
+          fontSize: '1.6rem',
+        }
+      }
+    }
   },
   shadows: Array(25).fill('none') as Shadows,
 })

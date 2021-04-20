@@ -8,9 +8,10 @@
   "pdm": "PdM(プロダクトマネージメント)",
   "pdm.description": "PdMにおけるKGI/KPIの設定、OKRの設計から達成までのプロダクトマネジメント、JTBD(Jobs To Be Done)やHookedを利用したサービスのUser Story設計から実際のマネジメントまでを支援します。",
   "contact": "お問い合わせ",
+  "contact.description": "お仕事のご依頼やご相談など、お気軽にお問い合わせください。",
   "fullname": "夏目 佳明",
   "fullname.roman": "Yoshiaki Natsume",
-  "about.start": "2011年に株式会社ドワンゴに入社、Webのフロントエンドエンジニア、Unityエンジニア、UI/UXエンジニア、テックリードを経てプロダクトマネージャーとして2021年まで10年間従事。2014年にはSPAJAMにて優秀賞を受賞。2016年にはSPAJAM審査員として出席。ポートフォリオは",
+  "about.start": "2011年に株式会社ドワンゴに入社、Webのフロントエンドエンジニア、Unityエンジニア、UI/UXエンジニア、テックリードを経てプロダクトマネージャーとして2021年まで10年間従事。2014年にはSPAJAMにて優秀賞を受賞。2016年にはSPAJAM審査員として出席。詳細なポートフォリオは",
   "about.or": "や",
   "about.end": "を参照。"
 }

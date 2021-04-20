@@ -4,7 +4,7 @@ import React from 'react'
 
 export const LinkedinButton = () => {
   return (
-    <Button size="medium" startIcon={<LinkedInIcon />} target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/yoshiaki-natsume">
+    <Button size="large" startIcon={<LinkedInIcon />} target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/yoshiaki-natsume">
       LinkedIn
     </Button>
   )

@@ -4,7 +4,7 @@ import React from 'react'
 
 export const TwitterButton = () => {
   return (
-    <Button size="medium" startIcon={<TwitterIcon />} target="_blank" rel="noreferrer" href="https://twitter.com/natsumesou">
+    <Button size="large" startIcon={<TwitterIcon />} target="_blank" rel="noreferrer" href="https://twitter.com/natsumesou">
       Twitter
     </Button>
   )

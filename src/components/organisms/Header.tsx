@@ -11,11 +11,10 @@ export const Header = (classes) => {
   return (
     <header>
     <AppBar position="sticky">
-      <Toolbar variant="dense">
+      <Toolbar variant="regular">
       <Typography variant="h1" className={classes.title}>
         Yoshiaki Natsume
       </Typography>
-      <Button color="inherit">Login</Button>
       </Toolbar>
     </AppBar>
     <StaticImage src="../../images/header.webp" alt="header image" objectFit={ 'cover' } style={ style } />

@@ -4,7 +4,7 @@ import React from 'react'
 
 export const GitHubButton = () => {
   return (
-    <Button size="medium" startIcon={<GitHubIcon />} target="_blank" rel="noreferrer" href="https://github.com/natsumesou">
+    <Button size="large" startIcon={<GitHubIcon />} target="_blank" rel="noreferrer" href="https://github.com/natsumesou">
       GitHub
     </Button>
   )

@@ -9,8 +9,8 @@ export const Links = () => {
     <MainBox>
       <h2>Links</h2>
       <TwitterButton />
-      <GitHubButton />
       <LinkedinButton />
+      <GitHubButton />
     </MainBox>
   )
 }

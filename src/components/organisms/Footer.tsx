@@ -5,7 +5,7 @@ import { MainBox } from '../molecules/MainBox'
 const useStyles = makeStyles(
   createStyles({
     footer: {
-      margin: '10px auto',
+      margin: '30px auto 20px',
       textAlign: 'center'
     }
   })

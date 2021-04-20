@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     icon: {
       marginRight: theme.spacing(0.5),
-      fontSize: theme.overrides.MuiFab.sizeMedium["& $label"].fontSize,
+      fontSize: '1.6rem',
     }
   })
 )

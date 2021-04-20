@@ -5,7 +5,10 @@ import { WantedlyLink } from '../atoms/WantedlyLink';
 import { MainBox } from '../molecules/MainBox'
 
 export const About = () => {
-  const [t] = useTranslation();
+  const { t, ready } = useTranslation();
+  if(ready === false) {
+    return;
+  }
 
   return (
     <MainBox>

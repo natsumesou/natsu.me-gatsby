@@ -14,10 +14,6 @@ i18n.use(initReactI18next).init({
   lng: 'ja',
   fallbackLng: 'ja',
   returnEmptyString: false,
-  react: {
-    wait: true,
-    useSuspense: true
-  }
 })
 
 const App = ({ children }) => {

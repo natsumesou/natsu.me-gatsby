@@ -5,6 +5,7 @@ import { Header } from '@/components/organisms/Header'
 import jaJson from '@/locales/ja.json';
 import { initReactI18next } from 'react-i18next';
 import i18n from 'i18next';
+import { Footer } from '@/components/organisms/Footer';
 
 i18n.use(initReactI18next).init({
   resources: {
@@ -21,6 +22,7 @@ const App = ({ children }) => {
       <CssBaseline />
       <Header />
       <main>{children}</main>
+      <Footer />
     </MuiThemeProvider>
   )
 }

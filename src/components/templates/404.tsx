@@ -1,11 +1,12 @@
 import { Box } from '@material-ui/core'
 import React from 'react'
+import { MainBox } from '../molecules/MainBox'
 
 const NotFound = () => {
   return (
-    <Box>
-      <h1>404</h1>
-    </Box>
+    <MainBox>
+      <h2>404 Not Found</h2>
+    </MainBox>
   )
 }
 

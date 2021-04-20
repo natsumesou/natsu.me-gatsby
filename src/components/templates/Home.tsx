@@ -15,7 +15,6 @@ const Home = () => {
       <About />
       <Links />
       <ContactButton />
-      <Footer />
     </Box>
   )
 }

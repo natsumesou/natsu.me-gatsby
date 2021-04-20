@@ -1,4 +1,5 @@
 import { createMuiTheme } from '@material-ui/core/styles'
+import { Shadows } from '@material-ui/core/styles/shadows'
 
 const { palette, breakpoints } = createMuiTheme({
   palette: {
@@ -84,4 +85,5 @@ export const theme = createMuiTheme({
       },
     },
   },
+  shadows: Array(25).fill('none') as Shadows,
 })

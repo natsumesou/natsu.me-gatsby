@@ -1,5 +1,5 @@
 import React from 'react'
-import { CssBaseline, ThemeProvider } from '@material-ui/core'
+import { CssBaseline, MuiThemeProvider, ThemeProvider } from '@material-ui/core'
 import { theme } from '@/theme'
 import { Header } from '@/components/organisms/Header'
 import jaJson from '@/locales/ja.json';
@@ -17,11 +17,11 @@ i18n.use(initReactI18next).init({
 
 const App = ({ children }) => {
   return (
-    <ThemeProvider theme={theme}>
+    <MuiThemeProvider theme={theme}>
       <CssBaseline />
       <Header />
       <main>{children}</main>
-    </ThemeProvider>
+    </MuiThemeProvider>
   )
 }
 

@@ -20,14 +20,6 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'pages',
-        path: './src/pages/',
-      },
-      __key: 'pages',
-    },
-    {
       resolve: `gatsby-plugin-material-ui`,
       options: {
         disableAutoprefixing: true,

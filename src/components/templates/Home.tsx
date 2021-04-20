@@ -5,11 +5,14 @@ import { Appetizer } from '../organisms/Appetizer'
 import { ContactButton } from '../atoms/ContactButton'
 import { Links } from '../organisms/Links'
 import { Works } from '../organisms/Works'
-import { Footer } from '../organisms/Footer'
+import SEO from '@/components/SEO';
 
-const Home = () => {
+const Home = ({ pageContext }) => {
+  const { site } = pageContext;
+  
   return (
     <Box>
+      <SEO siteMetadata={site.siteMetadata} />
       <Works />
       <Appetizer />
       <About />

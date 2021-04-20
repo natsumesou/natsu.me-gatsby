@@ -7,8 +7,8 @@ export const Pdm = () => {
 
   return (
     <Grid item sm={6}>
-    <h3>{t('pdm')}</h3>
-    <p>{t('pdm.description')}</p>
+    <h3>{t('pdm', {defaultValue: 'Product Management'})}</h3>
+    <p>{t('pdm.description', {defaultValue: ''})}</p>
     </Grid>
   )
 }

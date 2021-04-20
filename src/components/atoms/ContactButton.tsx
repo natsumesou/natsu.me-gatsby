@@ -8,7 +8,7 @@ export const ContactButton = () => {
 
   return (
     <Button size="large" startIcon={<MailOutlineIcon />} target="_blank" rel="noreferrer" href="https://docs.google.com/forms/d/e/1FAIpQLSfIp2atxPoEEl64C2EDqpKbG0IiJZChfu7Sj1OusTopPqKE7Q/viewform?usp=sf_link">
-      {t('contact')}
+      {t('contact', {defaultValue: 'contact'})}
     </Button>
   )
 }

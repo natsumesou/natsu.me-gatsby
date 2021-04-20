@@ -9,7 +9,7 @@ export const Contact = () => {
   return (
     <MainBox>
       <h2>Contact</h2>
-      <p>{t('contact.description')}</p>
+      <p>{t('contact.description', {defaultValue: ''})}</p>
       <ContactButton />
     </MainBox>
   )

@@ -12,8 +12,8 @@ export const Works = () => {
     <h2>Works</h2>
     <Grid container spacing={3} justify='center' alignItems='flex-start'>
       <Software />
-      <Consultant />
       <DXConsultant />
+      <Consultant />
       <Pdm />
     </Grid>
     </MainBox>

@@ -7,8 +7,8 @@ export const DXConsultant = () => {
 
   return (
     <Grid item sm={6}>
-    <h3>{t('dxconsultant')}</h3>
-    <p>{t('dxconsultant.description')}</p>
+    <h3>{t('dxconsultant', {defaultValue: 'DX consultant'})}</h3>
+    <p>{t('dxconsultant.description', {defaultValue: ''})}</p>
     </Grid>
   )
 }

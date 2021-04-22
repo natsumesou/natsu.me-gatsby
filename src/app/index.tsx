@@ -14,6 +14,10 @@ i18n.use(initReactI18next).init({
   lng: 'ja',
   fallbackLng: 'ja',
   returnEmptyString: false,
+  react: {
+    bindI18n: 'loaded',
+    bindI18nStore: 'added'
+  }
 })
 
 const App = ({ children }) => {

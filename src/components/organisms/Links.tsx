@@ -7,7 +7,7 @@ import { MainBox } from '../molecules/MainBox'
 export const Links = () => {
   return (
     <MainBox>
-      <h2>Links</h2>
+      <h2 id="links">Links</h2>
       <TwitterButton />
       <LinkedinButton />
       <GitHubButton />

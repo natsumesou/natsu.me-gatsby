@@ -16,7 +16,7 @@ export const About = () => {
 
   return (
     <MainBox>
-    <h2>About</h2>
+    <h2 id="about">About</h2>
     <h3>{name}</h3>
     <p>
       {aboutStart}

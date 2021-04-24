@@ -10,7 +10,7 @@ import { SDGs } from '../molecules/work/SDGs'
 export const Works = () => {
   return (
     <MainBox>
-    <h2>Works</h2>
+    <h2 id="works">Works</h2>
     <Grid container spacing={3} justify='flex-start' alignItems='flex-start'>
       <Software />
       <SDGs />

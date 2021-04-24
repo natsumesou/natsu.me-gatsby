@@ -12,7 +12,7 @@ export const Contact = () => {
 
   return (
     <MainBox>
-      <h2>Contact</h2>
+      <h2 id="contact">Contact</h2>
       <p>{description}</p>
       <ContactButton />
     </MainBox>

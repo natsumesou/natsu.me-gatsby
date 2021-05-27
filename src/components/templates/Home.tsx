@@ -7,6 +7,7 @@ import { Links } from '../organisms/Links'
 import { Works } from '../organisms/Works'
 import SEO from '@/components/SEO';
 import { Contact } from '../organisms/Contact'
+import { Partner } from '../organisms/Partner'
 
 const Home = ({ pageContext }) => {
   const { site } = pageContext;
@@ -15,6 +16,7 @@ const Home = ({ pageContext }) => {
     <Box>
       <SEO siteMetadata={site.siteMetadata} />
       <Works />
+      <Partner />
       <Contact />
       <Appetizer />
       <About />

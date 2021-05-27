@@ -14,12 +14,6 @@ module.exports = {
     'gatsby-transformer-remark',
     `gatsby-plugin-react-helmet`,
     {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: 'UA-41472707-1',
-      },
-    },
-    {
       resolve: `gatsby-plugin-material-ui`,
       options: {
         disableAutoprefixing: true,
@@ -35,6 +29,15 @@ module.exports = {
         theme_color: `#000000`,
         display: `standalone`,
         icon: `src/images/icon.png`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: "GTM-PM3XZBC",
+        includeInDevelopment: false,
+        defaultDataLayer: { platform: "gatsby" },
+        routeChangeEventName: "gatsby-route-change",
       },
     },
   ],

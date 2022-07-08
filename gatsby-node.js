@@ -9,7 +9,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
   })
 }
 
-exports.createPages = async ({ graphql, actions: { createPage }}) => {
+exports.createPages = async ({ graphql, actions: { createPage } }) => {
   const site = await graphql(`
     query SEO {
       site {
@@ -24,9 +24,33 @@ exports.createPages = async ({ graphql, actions: { createPage }}) => {
 
   createPage({
     path: `/`,
-    component: require.resolve("./src/components/templates/Home.tsx"),
+    component: require.resolve('./src/components/templates/Home.tsx'),
     context: {
-      site: site.data.site
-    }
+      site: site.data.site,
+    },
+  })
+
+  createPage({
+    path: `/company`,
+    component: require.resolve('./src/components/templates/Company.tsx'),
+    context: {
+      site: site.data.site,
+    },
+  })
+
+  createPage({
+    path: `/business`,
+    component: require.resolve('./src/components/templates/Business.tsx'),
+    context: {
+      site: site.data.site,
+    },
+  })
+
+  createPage({
+    path: `/contact`,
+    component: require.resolve('./src/components/templates/Contact.tsx'),
+    context: {
+      site: site.data.site,
+    },
   })
 }

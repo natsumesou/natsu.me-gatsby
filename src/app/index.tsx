@@ -1,11 +1,10 @@
 import React from 'react'
 import { CssBaseline, MuiThemeProvider } from '@material-ui/core'
-import { theme } from '@/theme'
-import { Header } from '@/components/organisms/Header'
-import jaJson from '@/locales/ja.json';
-import { initReactI18next } from 'react-i18next';
-import i18n from 'i18next';
-import { Footer } from '@/components/organisms/Footer';
+import { topTheme, theme } from '@/theme'
+import jaJson from '@/locales/ja.json'
+import { initReactI18next } from 'react-i18next'
+import i18n from 'i18next'
+import { Footer } from '@/components/organisms/Footer'
 
 i18n.use(initReactI18next).init({
   resources: {
@@ -16,15 +15,20 @@ i18n.use(initReactI18next).init({
   returnEmptyString: false,
   react: {
     bindI18n: 'loaded',
-    bindI18nStore: 'added'
-  }
+    bindI18nStore: 'added',
+  },
 })
 
 const App = ({ children }) => {
+  let customTheme
+  if (children.key === '/') {
+    customTheme = topTheme
+  } else {
+    customTheme = theme
+  }
   return (
-    <MuiThemeProvider theme={theme}>
+    <MuiThemeProvider theme={customTheme}>
       <CssBaseline />
-      <Header />
       <main>{children}</main>
       <Footer />
     </MuiThemeProvider>

@@ -1,9 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: 'natsu.me',
-    description: 'ソフトウェア開発からDX(デジタルトランスフォーメーション)支援、プロダクトマネジメントまで幅広く柔軟な対応が可能です。お気軽にお問い合わせください。',
+    title: 'vonxai inc.',
+    description:
+      'ソフトウェア開発からDX(デジタルトランスフォーメーション)支援、プロダクトマネジメントまで幅広く柔軟な対応が可能です。お気軽にお問い合わせください。',
     author: 'Yoshiaki Natsume',
-    siteUrl: 'https://natsu.me/',
+    siteUrl: 'https://vonxai.co.jp/',
   },
   plugins: [
     'gatsby-plugin-typescript',
@@ -32,12 +33,12 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-google-tagmanager",
+      resolve: 'gatsby-plugin-google-tagmanager',
       options: {
-        id: "GTM-PM3XZBC",
+        id: 'GTM-PM3XZBC',
         includeInDevelopment: false,
-        defaultDataLayer: { platform: "gatsby" },
-        routeChangeEventName: "gatsby-route-change",
+        defaultDataLayer: { platform: 'gatsby' },
+        routeChangeEventName: 'gatsby-route-change',
       },
     },
   ],

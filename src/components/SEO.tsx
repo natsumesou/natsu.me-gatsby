@@ -1,16 +1,12 @@
-import React from "react"
-import { Helmet } from "react-helmet"
-import { useLocation } from "@reach/router"
-import ogpImage from '../images/header.webp'
+import React from 'react'
+import { Helmet } from 'react-helmet'
+import { useLocation } from '@reach/router'
+import ogpImage from '../images/header01.webp'
 
-const SEO = ({siteMetadata}) => {
+const SEO = ({ siteMetadata }) => {
   const { pathname } = useLocation()
 
-  const {
-    title,
-    description,
-    siteUrl,
-  } = siteMetadata
+  const { title, description, siteUrl } = siteMetadata
 
   const seo = {
     title: title,
@@ -20,7 +16,7 @@ const SEO = ({siteMetadata}) => {
   }
 
   return (
-    <Helmet title={seo.title} htmlAttributes={{lang: 'ja'}}>
+    <Helmet title={seo.title} htmlAttributes={{ lang: 'ja' }}>
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
       <meta property="og:url" content={seo.url} />

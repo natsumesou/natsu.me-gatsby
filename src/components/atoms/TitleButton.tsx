@@ -1,11 +1,29 @@
-import { Button, Typography } from '@material-ui/core'
+import {
+  Button,
+  Typography,
+  makeStyles,
+  createStyles,
+  Theme,
+} from '@material-ui/core'
 import React from 'react'
 
-export const TitleButton = () => {
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    title: {
+      [theme.breakpoints.down('sm')]: {
+        fontSize: '2rem',
+      },
+    },
+  })
+)
+
+export const TitleButton = (props) => {
+  const classes = useStyles()
+
   return (
-    <Button href="/">
-      <Typography variant="h1">
-        Yoshiaki Natsume
+    <Button href="/" {...props}>
+      <Typography variant="h1" className={classes.title}>
+        vonxai inc.
       </Typography>
     </Button>
   )

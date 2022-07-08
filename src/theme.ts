@@ -4,6 +4,7 @@ import { Shadows } from '@material-ui/core/styles/shadows'
 const createTheme = (baseTheme: Theme) => {
   return createMuiTheme({
     palette: baseTheme.palette,
+    breakpoints: baseTheme.breakpoints,
     typography: {
       fontFamily: '"Noto Sans JP", sans-serif',
       h1: {

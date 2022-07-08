@@ -8,6 +8,7 @@ import {
   useMediaQuery,
 } from '@material-ui/core'
 import React from 'react'
+import { useBreakpoint } from 'gatsby-plugin-breakpoints'
 import { TitleButton } from '../atoms/TitleButton'
 import { CompanyButton } from '../atoms/CompanyButton'
 import { BusinessButton } from '../atoms/BusinessButton'
@@ -34,9 +35,9 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export const Header = () => {
   const classes = useStyles()
+  const breakpoints = useBreakpoint()
 
-  const isSM = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
-  const isXS = useMediaQuery((theme: Theme) => theme.breakpoints.down('xs'))
+  const isXS = breakpoints.xs
   const buttonProps = {
     size: isXS ? 'medium' : 'large',
   }

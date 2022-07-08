@@ -1,7 +1,6 @@
 import { createStyles, Fab, makeStyles, Theme } from '@material-ui/core'
 import MailOutlineIcon from '@material-ui/icons/MailOutline'
 import React from 'react'
-import { useTranslation } from 'react-i18next'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -22,11 +21,6 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export const ContactFloatButton = () => {
   const classes = useStyles()
-  const { t, ready } = useTranslation()
-  let contact = 'contact'
-  if (ready) {
-    contact = t('contact')
-  }
 
   return (
     <Fab
@@ -36,7 +30,7 @@ export const ContactFloatButton = () => {
       href="/contact"
     >
       <MailOutlineIcon className={classes.icon} />
-      {contact}
+      お問い合わせ
     </Fab>
   )
 }

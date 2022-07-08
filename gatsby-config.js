@@ -41,5 +41,14 @@ module.exports = {
         routeChangeEventName: 'gatsby-route-change',
       },
     },
+    {
+      resolve: `gatsby-plugin-breakpoints`,
+      options: {
+        queries: {
+          sm: '(max-width: 600px)',
+          xs: '(max-width: 450px)',
+        },
+      },
+    },
   ],
 }

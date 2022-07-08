@@ -1,7 +1,6 @@
 import React from 'react'
 import { CssBaseline, MuiThemeProvider } from '@material-ui/core'
 import { topTheme, theme } from '@/theme'
-import jaJson from '@/locales/ja.json'
 import { Footer } from '@/components/organisms/Footer'
 
 const App = ({ children }) => {

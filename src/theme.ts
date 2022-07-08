@@ -86,7 +86,7 @@ const createCustomTheme = (baseTheme: Theme) => {
         textTransform: 'none',
         fontSize: '1.2rem',
         [baseTheme.breakpoints.down('md')]: {
-          fontSize: '0.6rem',
+          fontSize: '1rem',
         },
       },
     },

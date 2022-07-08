@@ -1,4 +1,4 @@
-import { Box, styled } from '@mui/material'
+import { Box, Typography, styled } from '@mui/material'
 import React from 'react'
 
 const StyledBox = styled(Box)({
@@ -6,11 +6,17 @@ const StyledBox = styled(Box)({
   textAlign: 'center',
 })
 
+const StyledTypography = styled(Typography)({
+  fontSize: '1rem',
+})
+
 export const Footer = () => {
   return (
     <footer>
       <StyledBox color="secondary">
-        copyright © vonxai inc. All Rights Reserved.
+        <StyledTypography variant="body2">
+          copyright © vonxai inc. All Rights Reserved.
+        </StyledTypography>
       </StyledBox>
     </footer>
   )

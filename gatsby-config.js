@@ -9,14 +9,9 @@ module.exports = {
     'gatsby-plugin-typescript',
     'gatsby-plugin-image',
     'gatsby-plugin-sitemap',
-    `gatsby-plugin-sharp`,
-    `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-material-ui`,
-      options: {
-        disableAutoprefixing: true,
-      },
-    },
+    'gatsby-plugin-sharp',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-material-ui',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

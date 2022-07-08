@@ -1,4 +1,11 @@
-import { AppBar, Toolbar, useMediaQuery, Box, Theme } from '@mui/material'
+import {
+  AppBar,
+  Toolbar,
+  useMediaQuery,
+  Box,
+  Theme,
+  useTheme,
+} from '@mui/material'
 import { styled } from '@mui/material'
 import React from 'react'
 import { TitleButton } from '../atoms/TitleButton'
@@ -12,25 +19,21 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   },
 }))
 
-const StyledBox = styled(Box)(({ theme }) => ({
-  flexGrow: 1,
-  justifyContent: 'flex-start',
-}))
-
-const StyledTitleButton = styled(TitleButton)({
+const StyledBox = styled(Box)({
   flexGrow: 1,
   justifyContent: 'flex-start',
 })
 
 export const Header = () => {
-  const isSM = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
+  const theme = useTheme()
+  const isSM = useMediaQuery(theme.breakpoints.down('sm'))
 
   return (
     <header>
       <AppBar position="sticky">
         <StyledToolbar variant="regular">
           <StyledBox>
-            <StyledTitleButton />
+            <TitleButton />
           </StyledBox>
           <CompanyButton onlyIcon={isSM} />
           <BusinessButton onlyIcon={isSM} />

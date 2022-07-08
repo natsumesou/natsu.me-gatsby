@@ -1,7 +1,11 @@
-import { Button } from '@material-ui/core'
-import Public from '@material-ui/icons/Public'
+import { Button, styled } from '@mui/material'
+import PublicIcon from '@mui/icons-material/Public'
 import { IconButton } from 'gatsby-theme-material-ui'
 import React from 'react'
+
+const StyledButton = styled(Button)(({ theme }) => ({
+  color: theme.palette.text.primary,
+}))
 
 export const BusinessButton = (props) => {
   const { onlyIcon, ...rest } = props
@@ -9,14 +13,19 @@ export const BusinessButton = (props) => {
   if (onlyIcon) {
     return (
       <IconButton size="medium" href="/business" {...rest}>
-        <Public />
+        <PublicIcon />
       </IconButton>
     )
   } else {
     return (
-      <Button size="large" startIcon={<Public />} href="/business" {...rest}>
+      <StyledButton
+        size="medium"
+        startIcon={<PublicIcon />}
+        href="/business"
+        {...rest}
+      >
         事業情報
-      </Button>
+      </StyledButton>
     )
   }
 }

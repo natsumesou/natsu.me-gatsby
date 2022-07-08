@@ -1,62 +1,57 @@
-import { makeStyles, createStyles } from '@material-ui/core'
+import { styled } from '@mui/material'
 import React from 'react'
-import { StaticImage } from 'gatsby-plugin-image'
 
-const useStyles = makeStyles(
-  createStyles({
-    header: {
-      width: '100%',
-      height: '75vh',
-    },
-    viewport: {
-      height: 'inherit',
-      listStyle: 'none',
-      margin: 0,
-      padding: 0,
-      position: 'absolute',
-      top: 0,
-      right: 0,
-      bottom: 0,
-      left: 0,
-    },
-    slide: {
-      height: '100%',
-      listStyle: 'none',
-      margin: 0,
-      padding: 0,
-      position: 'absolute',
-      left: 0,
-      width: '100%',
+const StyledHeader = styled('header')({
+  width: '100%',
+  height: '75vh',
+})
 
-      '&:nth-of-type(1) img': {
-        animationDelay: '0s',
-      },
-      '&:nth-of-type(2) img': {
-        animationDelay: '4s',
-      },
-      '&:nth-of-type(3) img': {
-        animationDelay: '8s',
-      },
-    },
-    image: {
-      width: '100%',
-      height: '100%',
-      '& img': {
-        opacity: '0 !important',
-        animationName: 'fade, up',
-        animationTimingFunction: 'ease-in-out',
-        animationIterationCount: 'infinite',
-        animationDuration: '14s',
-      },
-    },
-  })
-)
+const StyledOl = styled('ol')({
+  height: 'inherit',
+  listStyle: 'none',
+  margin: 0,
+  padding: 0,
+  position: 'absolute',
+  top: 0,
+  right: 0,
+  bottom: 0,
+  left: 0,
+})
+
+const StyledLi = styled('li')({
+  height: '100%',
+  listStyle: 'none',
+  margin: 0,
+  padding: 0,
+  position: 'absolute',
+  left: 0,
+  width: '100%',
+
+  '&:nth-of-type(1) img': {
+    animationDelay: '0s',
+  },
+  '&:nth-of-type(2) img': {
+    animationDelay: '4s',
+  },
+  '&:nth-of-type(3) img': {
+    animationDelay: '8s',
+  },
+})
+
+const StyledImage = styled('img')({
+  width: '100%',
+  height: '100%',
+  objectFit: 'cover',
+  opacity: '0 !important',
+  animationName: 'fade, up',
+  animationTimingFunction: 'ease-in-out',
+  animationIterationCount: 'infinite',
+  animationDuration: '14s',
+})
 
 export const TopHeader = () => {
-  const classes = useStyles()
-
   return (
-    <header className={classes.header}>
+    <StyledHeader>
       <style>
         {`
           @keyframes up {
@@ -83,32 +78,26 @@ export const TopHeader = () => {
           }
         `}
       </style>
-      <ol className={classes.viewport}>
-        <li className={classes.slide}>
-          <StaticImage
-            src="../../images/header01.webp"
+      <StyledOl>
+        <StyledLi>
+          <StyledImage
+            src={`/assets/images/header01.webp`}
             alt="header image"
-            objectFit={'cover'}
-            className={classes.image}
           />
-        </li>
-        <li className={classes.slide}>
-          <StaticImage
-            src="../../images/header02.webp"
+        </StyledLi>
+        <StyledLi>
+          <StyledImage
+            src={`/assets/images/header02.webp`}
             alt="header image"
-            objectFit={'cover'}
-            className={classes.image}
           />
-        </li>
-        <li className={classes.slide}>
-          <StaticImage
-            src="../../images/header03.webp"
+        </StyledLi>
+        <StyledLi>
+          <StyledImage
+            src={`/assets/images/header03.webp`}
             alt="header image"
-            objectFit={'cover'}
-            className={classes.image}
           />
-        </li>
-      </ol>
-    </header>
+        </StyledLi>
+      </StyledOl>
+    </StyledHeader>
   )
 }

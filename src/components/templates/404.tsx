@@ -1,23 +1,15 @@
-import { makeStyles, Theme, Typography, createStyles } from '@material-ui/core'
+import { Typography, styled } from '@mui/material'
 import React from 'react'
 import Base from './Base'
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    text: {
-      textAlign: 'center',
-    },
-  })
-)
+const STyledTypography = styled(Typography)({
+  textAlign: 'center',
+})
 
 const NotFound = () => {
-  const classes = useStyles()
-
   return (
     <Base>
-      <Typography className={classes.text} variant="h2">
-        404 Not Found
-      </Typography>
+      <Typography variant="h2">404 Not Found</Typography>
     </Base>
   )
 }

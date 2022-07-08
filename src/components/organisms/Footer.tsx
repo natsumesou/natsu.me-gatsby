@@ -1,23 +1,17 @@
-import { Box, createStyles, makeStyles } from '@material-ui/core'
+import { Box, styled } from '@mui/material'
 import React from 'react'
 
-const useStyles = makeStyles(
-  createStyles({
-    footer: {
-      margin: '30px auto 20px',
-      textAlign: 'center',
-    },
-  })
-)
+const StyledBox = styled(Box)({
+  margin: '30px auto 20px',
+  textAlign: 'center',
+})
 
 export const Footer = () => {
-  const classes = useStyles()
-
   return (
     <footer>
-      <Box className={classes.footer} color="secondary">
+      <StyledBox color="secondary">
         copyright © vonxai inc. All Rights Reserved.
-      </Box>
+      </StyledBox>
     </footer>
   )
 }

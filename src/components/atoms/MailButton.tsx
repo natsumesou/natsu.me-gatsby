@@ -1,16 +1,20 @@
-import { Button } from '@material-ui/core'
-import Mail from '@material-ui/icons/Mail'
+import { Button, styled } from '@mui/material'
+import MailOutlineIcon from '@mui/icons-material/MailOutline'
 import React from 'react'
+
+const StyledButton = styled(Button)(({ theme }) => ({
+  color: theme.palette.text.primary,
+}))
 
 export const MailButton = (props) => {
   return (
-    <Button
+    <StyledButton
       size="large"
-      startIcon={<Mail />}
+      startIcon={<MailOutlineIcon />}
       href="mailto:contact@vonxai.co.jp?subject=問い合わせ&amp;body=企業/団体名：%0D%0A氏名：%0D%0A件名：%0D%0A内容："
       {...props}
     >
-      問い合わせメール
-    </Button>
+      お問い合わせメール
+    </StyledButton>
   )
 }

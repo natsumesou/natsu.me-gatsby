@@ -1,5 +1,5 @@
 import React from 'react'
-import { CssBaseline, MuiThemeProvider } from '@material-ui/core'
+import { CssBaseline, ThemeProvider } from '@mui/material'
 import { topTheme, theme } from '@/theme'
 import { Footer } from '@/components/organisms/Footer'
 
@@ -11,11 +11,11 @@ const App = ({ children }) => {
     customTheme = theme
   }
   return (
-    <MuiThemeProvider theme={customTheme}>
+    <ThemeProvider theme={customTheme}>
       <CssBaseline />
       <main>{children}</main>
       <Footer />
-    </MuiThemeProvider>
+    </ThemeProvider>
   )
 }
 

@@ -1,7 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { useLocation } from '@reach/router'
-import ogpImage from '../images/header01.webp'
 
 const SEO = ({ siteMetadata }) => {
   const { pathname } = useLocation()
@@ -11,7 +10,7 @@ const SEO = ({ siteMetadata }) => {
   const seo = {
     title: title,
     description: description,
-    image: `${siteUrl}${ogpImage}`,
+    image: `${siteUrl}/assets/images/header01.webp`,
     url: `${siteUrl}${pathname}`,
   }
 

@@ -1,24 +1,19 @@
-import { Box, createStyles, makeStyles, Typography } from '@material-ui/core'
+import { Box, styled, Typography } from '@mui/material'
 import React from 'react'
 
-const useStyles = makeStyles(
-  createStyles({
-    box: {
-      margin: '1rem 0',
-    },
-    subtitle: {
-      fontWeight: 'bold',
-    },
-  })
-)
+const StyledBox = styled(Box)({
+  margin: '1rem 0',
+})
+
+const StyledTypography = styled(Typography)({
+  fontWeight: 'bold',
+})
 
 export const Title = () => {
-  const classes = useStyles()
-
   return (
-    <Box className={classes.box}>
-      <Typography className={classes.subtitle}>世界を加速させる。</Typography>
+    <StyledBox>
+      <StyledTypography>世界を加速させる。</StyledTypography>
       <Typography variant="h1">vonxai inc.</Typography>
-    </Box>
+    </StyledBox>
   )
 }

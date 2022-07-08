@@ -7,11 +7,9 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-typescript',
-    'gatsby-plugin-styled-components',
     'gatsby-plugin-image',
-    `gatsby-plugin-sharp`,
     'gatsby-plugin-sitemap',
-    'gatsby-transformer-remark',
+    `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-material-ui`,
@@ -28,25 +26,23 @@ module.exports = {
         background_color: `#000000`,
         theme_color: `#000000`,
         display: `standalone`,
-        icon: `src/images/icon.png`,
+        icon: `static/assets/images/icon.png`,
       },
     },
     {
       resolve: 'gatsby-plugin-google-tagmanager',
       options: {
-        id: 'GTM-PM3XZBC',
+        id: 'GTM-W27JGZF',
         includeInDevelopment: false,
         defaultDataLayer: { platform: 'gatsby' },
         routeChangeEventName: 'gatsby-route-change',
       },
     },
     {
-      resolve: `gatsby-plugin-breakpoints`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        queries: {
-          sm: '(max-width: 600px)',
-          xs: '(max-width: 450px)',
-        },
+        name: 'assets',
+        path: `${__dirname}/static/assets/`,
       },
     },
   ],

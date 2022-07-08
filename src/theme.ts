@@ -1,80 +1,120 @@
-import { createMuiTheme, Theme } from '@material-ui/core/styles'
-import { Shadows } from '@material-ui/core/styles/shadows'
+import { createTheme } from '@mui/material/styles'
+import { Shadows } from '@mui/material/styles/shadows'
+import { Theme } from '@mui/material'
 
-const createTheme = (baseTheme: Theme) => {
-  return createMuiTheme({
+const breakpoints = {
+  values: {
+    xs: 400,
+    sm: 600,
+    md: 900,
+    lg: 1200,
+    xl: 1536,
+  },
+}
+
+const createCustomTheme = (baseTheme: Theme) => {
+  return createTheme({
     palette: baseTheme.palette,
-    breakpoints: baseTheme.breakpoints,
     typography: {
       fontFamily: '"Noto Sans JP", sans-serif',
       h1: {
         fontSize: '4rem',
         fontWeight: 'bold',
         color: baseTheme.palette.text.primary,
+        [baseTheme.breakpoints.down('md')]: {
+          fontSize: '2rem',
+        },
       },
       h2: {
         fontSize: '2rem',
         fontWeight: 'bold',
         color: baseTheme.palette.text.primary,
+        [baseTheme.breakpoints.down('md')]: {
+          fontSize: '1rem',
+        },
       },
       h3: {
         fontSize: '1.6rem',
         fontWeight: 'bold',
         color: baseTheme.palette.text.primary,
+        [baseTheme.breakpoints.down('md')]: {
+          fontSize: '0.8rem',
+        },
       },
       h4: {
         fontSize: '1.4rem',
         fontWeight: 'bold',
         color: baseTheme.palette.text.primary,
+        [baseTheme.breakpoints.down('md')]: {
+          fontSize: '0.7rem',
+        },
       },
       h5: {
         fontSize: '1.2rem',
         fontWeight: 'bold',
         color: baseTheme.palette.text.primary,
+        [baseTheme.breakpoints.down('md')]: {
+          fontSize: '0.6rem',
+        },
       },
       h6: {
         fontSize: '1rem',
         fontWeight: 'bold',
         color: baseTheme.palette.text.primary,
+        [baseTheme.breakpoints.down('md')]: {
+          fontSize: '0.5rem',
+        },
       },
       body1: {
         letterSpacing: 0,
         fontSize: '1.6rem',
         color: baseTheme.palette.text.primary,
+        [baseTheme.breakpoints.down('md')]: {
+          fontSize: '0.8rem',
+        },
       },
       body2: {
         fontSize: '1.4rem',
         lineHeight: '1.8rem',
         color: baseTheme.palette.text.secondary,
+        [baseTheme.breakpoints.down('md')]: {
+          fontSize: '0.7rem',
+          lineHeight: '0.9rem',
+        },
       },
       button: {
         textTransform: 'none',
         fontSize: '1.2rem',
+        [baseTheme.breakpoints.down('md')]: {
+          fontSize: '0.6rem',
+        },
       },
     },
-    overrides: {
+    components: {
       MuiCssBaseline: {
-        '@global': {
-          '*': {
-            boxSizing: 'border-box',
-          },
-          html: {
-            minHeight: '100%',
-            fontSize: '12px',
+        styleOverrides: {
+          '@global': {
+            '*': {
+              boxSizing: 'border-box',
+            },
+            html: {
+              minHeight: '100%',
+              fontSize: '12px',
+            },
           },
         },
       },
       MuiButton: {
-        sizeLarge: {
-          '& $label': {
-            fontSize: '1.6rem',
+        styleOverrides: {
+          sizeLarge: {
+            fontSize: '1.4rem',
           },
         },
       },
       MuiFab: {
-        sizeMedium: {
-          '& $label': {
-            fontSize: '1.6rem',
+        styleOverrides: {
+          sizeMedium: {
+            fontSize: '1rem',
           },
         },
       },
@@ -83,8 +123,9 @@ const createTheme = (baseTheme: Theme) => {
   })
 }
 
-export const topTheme = createTheme(
-  createMuiTheme({
+export const topTheme = createCustomTheme(
+  createTheme({
+    breakpoints: breakpoints,
     palette: {
       primary: {
         main: '#000000',
@@ -106,8 +147,9 @@ export const topTheme = createTheme(
   })
 )
 
-export const theme = createTheme(
-  createMuiTheme({
+export const theme = createCustomTheme(
+  createTheme({
+    breakpoints: breakpoints,
     palette: {
       primary: {
         main: '#ffffff',

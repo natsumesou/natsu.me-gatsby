@@ -1,78 +1,69 @@
-import {
-  Box,
-  Typography,
-  makeStyles,
-  createStyles,
-  Theme,
-  Grid,
-} from '@material-ui/core'
+import { Typography, Grid, styled } from '@mui/material'
 import React from 'react'
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    grid: {
-      margin: '1em -8px',
-      flexDirection: 'column',
-    },
-    griditem: {
-      display: 'flex',
-      borderBottom: '1px solid #e6e6e6',
-      alignItems: 'center',
-    },
-    dt: {
-      flex: 1,
-    },
-    dd: {
-      flex: 1,
-    },
-  })
-)
+const StyledGrid = styled(Grid)({
+  margin: '1em -8px',
+  flexDirection: 'column',
+})
+
+const StyledGridItem = styled(Grid)({
+  display: 'flex',
+  borderBottom: '1px solid #e6e6e6',
+  alignItems: 'center',
+  paddingTop: '0 !important',
+})
+
+const StyledTypographyDt = styled(Typography)({
+  flex: 1,
+})
+
+const StyledTypographyDD = styled(Typography)({
+  flex: 1,
+})
 
 export const About = () => {
-  const classes = useStyles()
-
   return (
-    <Grid container component="dl" spacing={2} className={classes.grid}>
-      <Grid item className={classes.griditem}>
-        <Typography component="dt" variant="body1" className={classes.dt}>
+    <StyledGrid container component="dl" spacing={2}>
+      <StyledGridItem item>
+        <StyledTypographyDt component="dt" variant="body1">
           社名
-        </Typography>
-        <Typography component="dd" variant="body1" className={classes.dd}>
+        </StyledTypographyDt>
+        <StyledTypographyDD component="dd" variant="body1">
           vonxai合同会社
-        </Typography>
-      </Grid>
-      <Grid item className={classes.griditem}>
-        <Typography component="dt" variant="body1" className={classes.dt}>
+        </StyledTypographyDD>
+      </StyledGridItem>
+      <StyledGridItem item>
+        <StyledTypographyDt component="dt" variant="body1">
           本社所在地
-        </Typography>
-        <Typography component="dd" variant="body1" className={classes.dd}>
+        </StyledTypographyDt>
+        <StyledTypographyDD component="dd" variant="body1">
           東京都渋谷区
-        </Typography>
-      </Grid>
-      <Grid item className={classes.griditem}>
-        <Typography component="dt" variant="body1" className={classes.dt}>
+        </StyledTypographyDD>
+      </StyledGridItem>
+      <StyledGridItem item>
+        <StyledTypographyDt component="dt" variant="body1">
           最高経営責任者
-        </Typography>
-        <Typography component="dd" variant="body1" className={classes.dd}>
+        </StyledTypographyDt>
+        <StyledTypographyDD component="dd" variant="body1">
           夏目佳明
-        </Typography>
-      </Grid>
-      <Grid item className={classes.griditem}>
-        <Typography component="dt" variant="body1" className={classes.dt}>
+        </StyledTypographyDD>
+      </StyledGridItem>
+      <StyledGridItem item>
+        <StyledTypographyDt component="dt" variant="body1">
           設立
-        </Typography>
-        <Typography component="dd" variant="body1" className={classes.dd}>
+        </StyledTypographyDt>
+        <StyledTypographyDD component="dd" variant="body1">
           2022年07月01日
-        </Typography>
-      </Grid>
-      <Grid item className={classes.griditem}>
-        <Typography component="dt" variant="body1" className={classes.dt}>
+        </StyledTypographyDD>
+      </StyledGridItem>
+      <StyledGridItem item>
+        <StyledTypographyDt component="dt" variant="body1">
           資本金
-        </Typography>
-        <Typography component="dd" variant="body1" className={classes.dd}>
+        </StyledTypographyDt>
+        <StyledTypographyDD component="dd" variant="body1">
           1百万円
-        </Typography>
-      </Grid>
-    </Grid>
+        </StyledTypographyDD>
+      </StyledGridItem>
+    </StyledGrid>
   )
 }

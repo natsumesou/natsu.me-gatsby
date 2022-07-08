@@ -53,7 +53,7 @@ export const Works = () => {
           ウェブサービス・AR・VR開発事業
         </Typography>
         <Typography component="dd" variant="body1" className={classes.dd}>
-          ウェブサービス・AR・VR関連の開発
+          ウェブサービス・AR・VR関連の開発。
         </Typography>
       </Grid>
       <Grid item className={classes.griditem}>

@@ -5,7 +5,6 @@ import {
   createStyles,
   Box,
   Theme,
-  useMediaQuery,
 } from '@material-ui/core'
 import React from 'react'
 import { useBreakpoint } from 'gatsby-plugin-breakpoints'

@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme: Theme) =>
       flex: 1,
     },
     dd: {
-      flex: 2,
+      flex: 1,
     },
   })
 )

@@ -3,7 +3,6 @@ module.exports = {
     title: 'vonxai inc.',
     description:
       'ソフトウェア開発からDX(デジタルトランスフォーメーション)支援、プロダクトマネジメントまで幅広く柔軟な対応が可能です。お気軽にお問い合わせください。',
-    author: 'Yoshiaki Natsume',
     siteUrl: 'https://vonxai.co.jp/',
   },
   plugins: [

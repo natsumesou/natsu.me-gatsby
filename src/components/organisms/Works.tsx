@@ -23,6 +23,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     dd: {
       flex: 2,
+      paddingLeft: '1em',
     },
   })
 )

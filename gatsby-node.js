@@ -1,4 +1,3 @@
-const path = require('path')
 const TsConfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 
 exports.onCreateWebpackConfig = ({ actions }) => {

@@ -23,60 +23,63 @@
     </script>
     <!-- End Google Tag Manager -->
     <script>
-      const $unit = 100
-      const each = (elements, fn) => {
-        for (let i = 0; i < elements.length; i++) {
-          fn(elements[i])
+      ;(function () {
+        const $unit = 100
+        const each = (elements, fn) => {
+          for (let i = 0; i < elements.length; i++) {
+            fn(elements[i])
+          }
         }
-      }
-      window.addEventListener('DOMContentLoaded', function () {
-        const paths = document.getElementsByClassName('path')
-        const gs = document.getElementsByTagName('g')
-        window.addEventListener('scroll', function () {
-          const scrollTop =
-            window.pageYOffset || document.documentElement.scrollTop
-          var $percentageComplete =
-            (scrollTop /
-              (document.documentElement.scrollHeight -
-                document.documentElement.clientHeight -
-                55)) *
-            100
-          var $offsetUnit = $percentageComplete * ($unit / 100)
-          each(paths, (path) => {
-            path.style.strokeDashoffset = $unit - $offsetUnit
+        window.addEventListener('DOMContentLoaded', function () {
+          console.log('loaded')
+          const paths = document.getElementsByClassName('path')
+          const gs = document.getElementsByTagName('g')
+          window.addEventListener('scroll', function () {
+            const scrollTop =
+              window.pageYOffset || document.documentElement.scrollTop
+            var $percentageComplete =
+              (scrollTop /
+                (document.documentElement.scrollHeight -
+                  document.documentElement.clientHeight -
+                  55)) *
+              100
+            var $offsetUnit = $percentageComplete * ($unit / 100)
+            each(paths, (path) => {
+              path.style.strokeDashoffset = $unit - $offsetUnit
+            })
+            if ($offsetUnit >= 90) {
+              each(paths, (path) => {
+                path.style.strokeDasharray = 0
+              })
+            } else {
+              each(paths, (path) => {
+                path.style.strokeDasharray = '100px'
+              })
+              each(gs, (g) => {
+                g.setAttribute('fill', 'none')
+              })
+            }
+            if ($offsetUnit >= 98) {
+              each(gs, (g) => {
+                g.setAttribute('fill', '#000')
+              })
+            } else if ($offsetUnit >= 96) {
+              each(gs, (g) => {
+                g.setAttribute('fill', '#444')
+              })
+            } else if ($offsetUnit >= 94) {
+              each(gs, (g) => {
+                g.setAttribute('fill', '#888')
+              })
+            } else if ($offsetUnit >= 92) {
+              each(gs, (g) => {
+                g.setAttribute('fill', '#bbb')
+              })
+            }
           })
-          if ($offsetUnit >= 90) {
-            each(paths, (path) => {
-              path.style.strokeDasharray = 0
-            })
-          } else {
-            each(paths, (path) => {
-              path.style.strokeDasharray = '100px'
-            })
-            each(gs, (g) => {
-              g.setAttribute('fill', 'none')
-            })
-          }
-          if ($offsetUnit >= 98) {
-            each(gs, (g) => {
-              g.setAttribute('fill', '#000')
-            })
-          } else if ($offsetUnit >= 96) {
-            each(gs, (g) => {
-              g.setAttribute('fill', '#444')
-            })
-          } else if ($offsetUnit >= 94) {
-            each(gs, (g) => {
-              g.setAttribute('fill', '#888')
-            })
-          } else if ($offsetUnit >= 92) {
-            each(gs, (g) => {
-              g.setAttribute('fill', '#bbb')
-            })
-          }
+          window.dispatchEvent(new Event('scroll'))
         })
-        window.dispatchEvent(new Event('scroll'))
-      })
+      })()
     </script>
     <style>
       body {

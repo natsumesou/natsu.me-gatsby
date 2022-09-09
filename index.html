@@ -33,7 +33,7 @@
         $(window).scroll(function () {
           var $percentageComplete =
             ($(window).scrollTop() /
-              ($('html').height() - $(window).height())) *
+              ($('html').height() - $(window).height() - 55)) *
             100
           var $newUnit = parseInt($dashOffset, 10)
           var $offsetUnit = $percentageComplete * ($newUnit / 100)

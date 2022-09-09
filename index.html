@@ -23,12 +23,6 @@
     </script>
     <!-- End Google Tag Manager -->
     <script>
-      window.addEventListener('DOMContentLoaded', function () {
-        console.log('test DOMContentLoaded')
-      })
-      window.addEventListener('load', function () {
-        console.log('test load')
-      })
       ;(function () {
         const $unit = 100
         const each = (elements, fn) => {
@@ -36,8 +30,7 @@
             fn(elements[i])
           }
         }
-        window.addEventListener('DOMContentLoaded', function () {
-          console.log('loaded')
+        window.addEventListener('load', function () {
           const paths = document.getElementsByClassName('path')
           const gs = document.getElementsByTagName('g')
           window.addEventListener('scroll', function () {

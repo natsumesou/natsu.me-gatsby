@@ -22,41 +22,60 @@
       })(window, document, 'script', 'dataLayer', 'GTM-PM3XZBC')
     </script>
     <!-- End Google Tag Manager -->
-    <script
-      src="https://code.jquery.com/jquery-3.6.1.slim.min.js"
-      integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA="
-      crossorigin="anonymous"
-    ></script>
     <script>
-      $(document).ready(function () {
-        var $dashOffset = $('.path').css('stroke-dashoffset')
-        $(window).scroll(function () {
+      const $unit = 100
+      const each = (elements, fn) => {
+        for (let i = 0; i < elements.length; i++) {
+          fn(elements[i])
+        }
+      }
+      window.addEventListener('DOMContentLoaded', function () {
+        const paths = document.getElementsByClassName('path')
+        const gs = document.getElementsByTagName('g')
+        window.addEventListener('scroll', function () {
+          const scrollTop =
+            window.pageYOffset || document.documentElement.scrollTop
           var $percentageComplete =
-            ($(window).scrollTop() /
-              ($('html').height() - $(window).height() - 55)) *
+            (scrollTop /
+              (document.documentElement.scrollHeight -
+                document.documentElement.clientHeight -
+                55)) *
             100
-          var $newUnit = parseInt($dashOffset, 10)
-          var $offsetUnit = $percentageComplete * ($newUnit / 100)
-          $('.path').css('stroke-dashoffset', $newUnit - $offsetUnit)
+          var $offsetUnit = $percentageComplete * ($unit / 100)
+          each(paths, (path) => {
+            path.style.strokeDashoffset = $unit - $offsetUnit
+          })
           if ($offsetUnit >= 90) {
-            $('.path').css('stroke-dasharray', '0')
+            each(paths, (path) => {
+              path.style.strokeDasharray = 0
+            })
           } else {
-            $('g').attr('fill', 'none')
-            $('.path').css('stroke-dasharray', '100px')
+            each(paths, (path) => {
+              path.style.strokeDasharray = '100px'
+            })
+            each(gs, (g) => {
+              g.setAttribute('fill', 'none')
+            })
           }
-          if ($offsetUnit >= 100) {
-            $('g').attr('fill', '#000')
-          } else if ($offsetUnit >= 98) {
-            $('g').attr('fill', '#000')
+          if ($offsetUnit >= 98) {
+            each(gs, (g) => {
+              g.setAttribute('fill', '#000')
+            })
           } else if ($offsetUnit >= 96) {
-            $('g').attr('fill', '#444')
+            each(gs, (g) => {
+              g.setAttribute('fill', '#444')
+            })
           } else if ($offsetUnit >= 94) {
-            $('g').attr('fill', '#888')
+            each(gs, (g) => {
+              g.setAttribute('fill', '#888')
+            })
           } else if ($offsetUnit >= 92) {
-            $('g').attr('fill', '#bbb')
+            each(gs, (g) => {
+              g.setAttribute('fill', '#bbb')
+            })
           }
         })
-        $(window).trigger('scroll')
+        window.dispatchEvent(new Event('scroll'))
       })
     </script>
     <style>

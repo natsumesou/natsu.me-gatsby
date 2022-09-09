@@ -24,7 +24,10 @@
     <!-- End Google Tag Manager -->
     <script>
       window.addEventListener('DOMContentLoaded', function () {
-        console.log('test')
+        console.log('test DOMContentLoaded')
+      })
+      window.addEventListener('load', function () {
+        console.log('test load')
       })
       ;(function () {
         const $unit = 100

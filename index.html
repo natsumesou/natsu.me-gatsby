@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>natsu.me</title>
+    <meta name="description" content="natsumesou web site">
+    <meta name="robots" content="index,follow">
+    <link type="text/plain" rel="author" href="/humans.txt" />
+    <meta http-equiv="content-language" content="ja">
+    <link rel="icon" type="image/svg" href="logo.svg">
+    <script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-PM3XZBC"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js" integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
+    <script>
+      $(document).ready(function() {
+        var $dashOffset = $(".path").css("stroke-dashoffset");
+        $(window).scroll(function() {
+          var $percentageComplete = (($(window).scrollTop() / ($("html").height() - $(window).height())) * 100);
+          var $newUnit = parseInt($dashOffset, 10);
+          var $offsetUnit = $percentageComplete * ($newUnit / 100);
+          $(".path").css("stroke-dashoffset", $newUnit - $offsetUnit);
+          console.log($offsetUnit);
+          if ($offsetUnit >= 90) {
+            $(".path").css("stroke-dasharray", "0");
+          } else {
+            $("g").attr("fill", "none");
+            $(".path").css("stroke-dasharray", "100px");
+          }
+          if ($offsetUnit >= 100) {
+            $("g").attr("fill", "#000");
+          } else if ($offsetUnit >= 98) {
+            $("g").attr("fill", "#000");
+          } else if ($offsetUnit >= 96) {
+            $("g").attr("fill", "#444");
+          } else if ($offsetUnit >= 94) {
+            $("g").attr("fill", "#888");
+          } else if ($offsetUnit >= 92) {
+            $("g").attr("fill", "#bbb");
+          }
+        });
+        $(window).trigger("scroll");
+      });
+    </script>
+    <style>
+      body {
+        background: #FFF;
+        margin: 0;
+        padding: 0;
+      }
+
+      .svg-container {
+        height: 2000px;
+      }
+
+      svg {
+        position: fixed;
+        margin: auto;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100% !important;
+        height: auto;
+        max-width: 500px;
+        max-height: 340px;
+      }
+
+      .path {
+          stroke-dasharray: 100px;
+          stroke-dashoffset: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="https://vonxai.co.jp/" target="_blank">
+      <div class="svg-container"></div>
+      <svg version="1.1" viewBox="7 13.364 35.665 35.636">
+        <g width="100%" height="100%">
+          <g stroke="#000000" fill="none" storke-width="1" transform="matrix(1, 0, 0, 1, 0, 3.6)">
+            <path class="path" d="M 12.969 41.235 C 12.969 44.202 16.071 45.07 19.038 45.07 L 31.239 45.07 C 34.205 45.07 36.995 44.202 36.995 41.235 L 36.995 39.258 L 12.969 39.258 L 12.969 41.235 Z M 20.741 33.466 C 21.41 32.283 21.95 31.081 22.093 29.206 C 22.052 26.147 18.688 25.983 16.876 24.982 C 12.946 22.811 13.054 21.515 14.331 21.353 C 14.608 21.318 14.545 21.126 18.264 23.352 C 19.747 24.24 21.887 24.311 21.887 24.311 C 21.887 24.311 22.294 22.385 22.483 20.905 C 22.877 17.828 26.632 15.738 26.632 15.738 C 28.714 14.283 25.595 18.55 26.144 22.533 C 26.49 25.038 26.65 25.821 27.371 26.478 C 26.936 26.675 29.786 26.509 31.618 25.871 C 33.986 25.046 34.084 24.402 36.069 23.786 C 36.069 23.786 38.373 23.311 37.083 24.323 C 35.624 25.468 32.669 27.166 30.704 27.782 C 28.919 28.341 28.015 27.915 28.292 29.71 C 28.97 34.103 29.664 33.531 31.091 35.033 L 19.602 35.049 C 19.602 35.049 20.421 34.032 20.741 33.466 Z"></path>
+            <circle class="path" cx="14.219" cy="20.368" r="4.151"></circle>
+            <circle class="path" cx="18.298" cy="21.269" r="2.803"></circle>
+            <circle class="path" cx="10.787" cy="22.399" r="3.251"></circle>
+            <circle class="path" cx="38.535" cy="22.627" r="3.618"></circle>
+            <circle class="path" cx="26.056" cy="14.941" r="4.659"></circle>
+            <circle class="path" cx="29.186" cy="18.416" r="3.658"></circle>
+            <circle class="path" cx="20.68" cy="16.581" r="4.515"></circle>
+            <circle class="path" cx="38.383" cy="20.317" r="3.265"></circle>
+            <circle class="path" cx="33.912" cy="21.809" r="3.229"></circle>
+            <path class="path" d="M 12.969 36.258 L 36.995 36.258 L 36.995 38.258 L 12.969 38.258 L 12.969 36.258 Z"></path>
+          </g>
+        </g>
+      </svg>
+    </a>
+  </body>
+</html>

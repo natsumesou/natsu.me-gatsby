@@ -9,14 +9,20 @@
     <link rel="icon" type="image/svg" href="logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-02GP0F4LD9"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-02GP0F4LD9"
+    ></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
 
-      gtag('config', 'G-02GP0F4LD9');
+      gtag('config', 'G-02GP0F4LD9')
     </script>
+    <!-- End Google Tag Manager -->
     <script>
       ;(function () {
         const $unit = 100
@@ -88,6 +94,7 @@
               distance,
               duration
             )
+
             window.scrollTo(0, run)
             if (timeElapsed < duration) {
               requestAnimationFrame(animation)
@@ -103,7 +110,24 @@
 
           requestAnimationFrame(animation)
         }
-        setTimeout(() => smoothScrollTo(2000, 5000), 500)
+        setTimeout(() => {
+          const getScrollLength = () => {
+            const documentHeight = Math.max(
+              document.body.scrollHeight,
+              document.documentElement.scrollHeight,
+              document.body.offsetHeight,
+              document.documentElement.offsetHeight,
+              document.body.clientHeight,
+              document.documentElement.clientHeight
+            )
+            const viewportHeight = window.innerHeight
+            const scrollLength = documentHeight - viewportHeight
+            return scrollLength
+          }
+          console.log(getScrollLength())
+
+          smoothScrollTo(getScrollLength(), 5000)
+        }, 500)
       })()
     </script>
     <style>
